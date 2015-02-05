@@ -1,0 +1,9 @@
+
+<script>
+$.getJSON('http://whateverorigin.org/get?url=' 
+	+ encodeURIComponent('https://keep.google.com/keep/') + '&callback=?', function(data){
+	$('#main').html(data.contents);
+	//alert(data.contents);
+});
+
+</script>
