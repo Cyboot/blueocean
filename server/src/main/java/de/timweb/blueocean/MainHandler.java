@@ -16,7 +16,7 @@ import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
 public class MainHandler extends AbstractHandler {
-	private static String[]	sites	= { "", "issues", "keep", "calendar", "wiki", "stats" };
+	private static String[]	sites	= { "", "home", "issues", "keep", "calendar", "wiki", "stats" };
 
 	@Override
 	public void handle(String target, Request baseRequest, HttpServletRequest request,
@@ -29,13 +29,14 @@ public class MainHandler extends AbstractHandler {
 			return;
 
 		if (target.equals(""))
-			target = "issues";
+			target = "home";
 
-		String templateHTML = FileUtils.readFileToString(new File("../web/main.html"));
-		String siteHTML = FileUtils.readFileToString(new File("../web/" + target + ".html"));
+		String templateHTML = FileUtils.readFileToString(new File("web/main.html"));
+		String siteHTML = FileUtils.readFileToString(new File("web/" + target + ".html"));
 
 		Map<String, String> replaceMap = new HashMap<String, String>();
 		replaceMap.put("main", siteHTML);
+		replaceMap.put("tab.home", "");
 		replaceMap.put("tab.issues", "");
 		replaceMap.put("tab.calendar", "");
 		replaceMap.put("tab.wiki", "");

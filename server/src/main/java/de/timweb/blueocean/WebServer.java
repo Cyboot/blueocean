@@ -26,7 +26,7 @@ public class WebServer {
 		resourceHandler.setDirectoriesListed(true);
 		resourceHandler.setWelcomeFiles(new String[] { "main.html" });
 
-		resourceHandler.setResourceBase("../web");
+		resourceHandler.setResourceBase("web");
 
 		HandlerList handerList = new HandlerList();
 		handerList.setHandlers(new Handler[] { new MainHandler(), resourceHandler });
