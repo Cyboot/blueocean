@@ -1,0 +1,105 @@
+<script>
+	var pickerOpts = {
+		dateFormat : "dd.mm.yy"
+	};
+	$(function() {
+		$("#datepicker1").datepicker(pickerOpts);
+	});
+</script>
+
+
+<table id="table-outer">
+	<tr>
+		<td style="width: 200px;" valign="top">
+
+
+			<div id='csstable'>
+				<!-- LEFT ISSUES-List -->
+				<table class="table-fill">
+					<tbody class="table-hover">
+						<tr>
+							<td>#111: Short description</td>
+						</tr>
+						<tr>
+							<td>#222</td>
+						</tr>
+						<tr>
+							<td>#333</td>
+						</tr>
+						<tr>
+							<td>#444</td>
+						</tr>
+						<tr>
+							<td>#555</td>
+						</tr>
+						<tr>
+							<td>#666</td>
+						</tr>
+						<tr>
+							<td>#777</td>
+						</tr>
+						<tr>
+							<td>#888</td>
+						</tr>
+						<tr>
+							<td>#999</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</td>
+		<td valign="top">
+			<!-- RIGHT DETAILS ON ISSUES -->
+			<div id="issue-detail">
+
+				<h1>#111 Title of this Issue</h1>
+				<form action="/issues" method="post">
+					<textarea rows="10" cols="80" name="issue-text">
+At w3schools.com you will learn how to make a website. 
+We offer free tutorials in all web development technologies.
+					</textarea>
+					<br /> <input type="submit" value="Save"> <span
+						style="display: inline-block; width: 180px;"></span> Due: <input
+						name="due" type="text" size="10" id="datepicker1"
+						value="15.02.2015" /> <span
+						style="display: inline-block; width: 30px;"></span> Category: <input
+						name="category" type="text" size="10" id="category"
+						value="category" />
+				</form>
+
+				<div style="height: 20px;"></div>
+
+				<div id='csstable'>
+					<table>
+						<tbody>
+							<tr valign="top">
+								<td valign="top">
+									<div>
+										Short comment<br> Short comment<br> Short comment<br>
+									</div>
+								</td>
+							</tr>
+							<tr valign="top">
+								<td valign="top">
+									<div>
+										<form action="/issues" method="post">
+											<textarea rows="10" cols="80" name="issue-newcomment">
+newcomment
+								</textarea>
+											<br> <input type="submit" value="Reply">
+										</form>
+									</div>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+
+		</td>
+	</tr>
+</table>
+
