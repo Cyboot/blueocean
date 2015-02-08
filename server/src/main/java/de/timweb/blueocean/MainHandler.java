@@ -26,11 +26,11 @@ import de.timweb.blueocean.sitecreator.WikiSite;
 public class MainHandler extends AbstractHandler {
 	private static final Logger	LOGGER		= LoggerFactory.getLogger(MainHandler.class);
 
-	private final Site	calendar	= new CalendarSite();
-	private final Site	home		= new HomeSite();
-	private final Site	issue		= new IssueSite();
-	private final Site	stats		= new StatsSite();
-	private final Site	wiki		= new WikiSite();
+	private final Site			calendar	= new CalendarSite();
+	private final Site			home		= new HomeSite();
+	private final Site			issue		= new IssueSite();
+	private final Site			stats		= new StatsSite();
+	private final Site			wiki		= new WikiSite();
 
 	private static String[]		sites		= { "", "home", "issues", "calendar", "wiki", "stats" };
 
@@ -40,6 +40,8 @@ public class MainHandler extends AbstractHandler {
 		target = target.replace("/", "");
 		if (!validReqest(target))
 			return;
+
+		LOGGER.info("Request: GET /" + target + " => " + baseRequest.getParameterMap());
 
 		if (target.equals(""))
 			target = "home";
@@ -82,7 +84,7 @@ public class MainHandler extends AbstractHandler {
 		out.write(sub.replace(templateHTML));
 
 		baseRequest.setHandled(true);
-		response.setCharacterEncoding("text/html;charset=utf-8");
+		response.setCharacterEncoding("text/html;charset=ansi");
 		response.setStatus(HttpServletResponse.SC_OK);
 	}
 

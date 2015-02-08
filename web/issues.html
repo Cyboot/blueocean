@@ -26,49 +26,57 @@
 			<div id="issue-detail">
 
 				<form action="/issues" method="post">
-					<h1><input name="issue.title" type="text" size="30" id="category"
-						value="${issue.title}" style="font-size:1em;"/></h1>
-					 <input type="hidden" name="action"
-						value="create-issue">
-					<textarea rows="10" cols="80" name="issue.text">${issue.text}</textarea>
-					<br /> <input type="submit" value="Save"> <span
-						style="display: inline-block; width: 180px;"></span> Due: <input
-						name="issue.date" type="text" size="10" id="datepicker1"
-						value="${issue.date}" /> <span
-						style="display: inline-block; width: 30px;"></span> Category: <input
-						name="issue.category" type="text" size="10" value="${issue.category}"
-						id="category" />
+					<div id="issue-title">
+						<label for="MyInput" style="display: table-cell; width: 1px">${issue.nr}&nbsp;</label>
+
+						<input name="issue.title" type="text" value="${issue.title}"
+							style="font-size: 1em; display: table-cell; width: 100%" />
+
+					</div>
+					<hr>
+					<input type="hidden" name="action" value="create-issue">
+					<div id="issue-body">
+						<textarea rows="10"
+							style="font-size: 1em; display: table-cell; width: 100%"
+							name="issue.text">${issue.text}</textarea>
+
+						<br> <input type="submit" value="Save"> <span
+							style="display: inline-block; width: 280px;"></span>
+
+
+						<div style="float: right;">
+							Due: <input name="issue.date" type="text" size="10"
+								id="datepicker1" value="${issue.date}" /> <span
+								style="display: inline-block; width: 30px;"></span> Category: <input
+								name="issue.category" type="text" size="10"
+								value="${issue.category}" id="category" />
+						</div>
+
+					</div>
 				</form>
-
-				<div style="height: 20px;"></div>
-
+				<hr>
+				<div style="height: 10px;"></div>
+				<b>Comments:</b>
 				<div id='csstable'>
-					<table>
+					<table style="width: 100%;">
 						<tbody>
-							<tr valign="top">
-								<td valign="top">
-									<div>
-										Short comment<br> Short comment<br> Short comment<br>
-									</div>
-								</td>
-							</tr>
+							${issue.comments}
 							<tr valign="top">
 								<td valign="top">
 									<div>
 										<form action="/issues" method="post">
-											<textarea rows="10" cols="80" name="issue-newcomment">
-newcomment
-								</textarea>
+											<input type="hidden" name="issue-nr" value="${issue.nr}">
+											<input type="hidden" name="action" value="reply">
+											<textarea rows="5" cols="80" name="comment"
+												style="display: table-cell; width: 100%;"></textarea>
 											<br> <input type="submit" value="Reply">
 										</form>
 									</div>
 								</td>
 							</tr>
-
 						</tbody>
 					</table>
 				</div>
-
 			</div>
 
 

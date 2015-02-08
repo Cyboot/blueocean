@@ -3,17 +3,37 @@
 	width: 100%;
 }
 
+#issue-title {
+	width: 100%;
+	font-size: 2em;
+	font-weight: bold;
+	display: table;
+}
+#comment-text {
+	white-space: pre;
+}
+
+#comment-date {
+	margin-top: 10px;
+	font-size: 0.85em;
+	font-style: italic;
+}
+
+#issue-body {
+	width: 100%;
+	display: table;
+}
+
 #issue-detail {
 	padding: 1px 0px 0px 20px;
 	height: 100%;
+	max-width: 700px;
 }
 
 #csstable .table-fill {
 	background: white;
 	border-radius: 3px;
 	border-collapse: collapse;
-	
-	max-width: 600px;
 	padding: 5px;
 	width: 100%;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
