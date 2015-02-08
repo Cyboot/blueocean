@@ -14,28 +14,29 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.text.StrSubstitutor;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import de.timweb.blueocean.sitecreator.CalendarSiteCreator;
-import de.timweb.blueocean.sitecreator.HomeSiteCreator;
-import de.timweb.blueocean.sitecreator.IssueSiteCreator;
-import de.timweb.blueocean.sitecreator.StatsSiteCreator;
-import de.timweb.blueocean.sitecreator.WikiSiteCreator;
+import de.timweb.blueocean.sitecreator.CalendarSite;
+import de.timweb.blueocean.sitecreator.HomeSite;
+import de.timweb.blueocean.sitecreator.IssueSite;
+import de.timweb.blueocean.sitecreator.StatsSite;
+import de.timweb.blueocean.sitecreator.WikiSite;
 
 public class MainHandler extends AbstractHandler {
-	private final SiteCreator	calendar	= new CalendarSiteCreator();
-	private final SiteCreator	home		= new HomeSiteCreator();
-	private final SiteCreator	issue		= new IssueSiteCreator();
-	private final SiteCreator	stats		= new StatsSiteCreator();
-	private final SiteCreator	wiki		= new WikiSiteCreator();
+	private static final Logger	LOGGER		= LoggerFactory.getLogger(MainHandler.class);
+
+	private final Site	calendar	= new CalendarSite();
+	private final Site	home		= new HomeSite();
+	private final Site	issue		= new IssueSite();
+	private final Site	stats		= new StatsSite();
+	private final Site	wiki		= new WikiSite();
 
 	private static String[]		sites		= { "", "home", "issues", "calendar", "wiki", "stats" };
 
 	@Override
 	public void handle(String target, Request baseRequest, HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
-		// Logger logger = LoggerFactory.getLogger(MainHandler.class);
-		// logger.info("Target: " + target);
-
 		target = target.replace("/", "");
 		if (!validReqest(target))
 			return;

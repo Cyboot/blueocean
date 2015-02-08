@@ -16,34 +16,7 @@
 			<div id='csstable'>
 				<!-- LEFT ISSUES-List -->
 				<table class="table-fill">
-					<tbody class="table-hover">
-						<tr>
-							<td>#111: Short description</td>
-						</tr>
-						<tr>
-							<td>#222</td>
-						</tr>
-						<tr>
-							<td>#333</td>
-						</tr>
-						<tr>
-							<td>#444</td>
-						</tr>
-						<tr>
-							<td>#555</td>
-						</tr>
-						<tr>
-							<td>#666</td>
-						</tr>
-						<tr>
-							<td>#777</td>
-						</tr>
-						<tr>
-							<td>#888</td>
-						</tr>
-						<tr>
-							<td>#999</td>
-						</tr>
+					<tbody class="table-hover">${issue.list}
 					</tbody>
 				</table>
 			</div>
@@ -52,19 +25,19 @@
 			<!-- RIGHT DETAILS ON ISSUES -->
 			<div id="issue-detail">
 
-				<h1>#111 Title of this Issue</h1>
 				<form action="/issues" method="post">
-					<textarea rows="10" cols="80" name="issue-text">
-At w3schools.com you will learn how to make a website. 
-We offer free tutorials in all web development technologies.
-					</textarea>
+					<h1><input name="issue.title" type="text" size="30" id="category"
+						value="${issue.title}" style="font-size:1em;"/></h1>
+					 <input type="hidden" name="action"
+						value="create-issue">
+					<textarea rows="10" cols="80" name="issue.text">${issue.text}</textarea>
 					<br /> <input type="submit" value="Save"> <span
 						style="display: inline-block; width: 180px;"></span> Due: <input
-						name="due" type="text" size="10" id="datepicker1"
-						value="15.02.2015" /> <span
+						name="issue.date" type="text" size="10" id="datepicker1"
+						value="${issue.date}" /> <span
 						style="display: inline-block; width: 30px;"></span> Category: <input
-						name="category" type="text" size="10" id="category"
-						value="category" />
+						name="issue.category" type="text" size="10" value="${issue.category}"
+						id="category" />
 				</form>
 
 				<div style="height: 20px;"></div>

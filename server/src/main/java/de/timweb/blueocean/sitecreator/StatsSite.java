@@ -6,15 +6,13 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.eclipse.jetty.server.Request;
 
-import de.timweb.blueocean.SiteCreator;
+import de.timweb.blueocean.Site;
 
-public class IssueSiteCreator implements SiteCreator {
+public class StatsSite implements Site {
 
 	@Override
 	public String getHTML(Request request) throws IOException {
-		String templateHTML = FileUtils.readFileToString(new File("web/issues.html"));
-
-		return templateHTML;
+		return FileUtils.readFileToString(new File("web/stats.html"));
 	}
 
 }

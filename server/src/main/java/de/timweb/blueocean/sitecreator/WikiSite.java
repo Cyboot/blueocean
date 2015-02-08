@@ -6,9 +6,9 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.eclipse.jetty.server.Request;
 
-import de.timweb.blueocean.SiteCreator;
+import de.timweb.blueocean.Site;
 
-public class WikiSiteCreator implements SiteCreator {
+public class WikiSite implements Site {
 
 	@Override
 	public String getHTML(Request request) throws IOException {
