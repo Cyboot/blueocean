@@ -41,6 +41,7 @@ public class MainHandler extends AbstractHandler {
 		if (!validReqest(target))
 			return;
 
+		response.setContentType("text/html;charset=utf-8");
 		LOGGER.info("Request: GET /" + target + " => " + baseRequest.getParameterMap());
 
 		if (target.equals(""))
@@ -84,7 +85,6 @@ public class MainHandler extends AbstractHandler {
 		out.write(sub.replace(templateHTML));
 
 		baseRequest.setHandled(true);
-		response.setCharacterEncoding("text/html;charset=ansi");
 		response.setStatus(HttpServletResponse.SC_OK);
 	}
 
