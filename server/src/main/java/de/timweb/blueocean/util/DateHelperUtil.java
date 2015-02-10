@@ -6,8 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateHelperUtil {
-	private static final DateFormat	df		= new SimpleDateFormat("dd.MM.YYYY");
-	private static final DateFormat	df_full	= new SimpleDateFormat("HH:mm dd.MM.YYYY");
+	private static final DateFormat	df		= new SimpleDateFormat("dd.MM.yyyy");
+	private static final DateFormat	df_full	= new SimpleDateFormat("HH:mm dd.MM.yyyy");
 
 	/**
 	 * 
@@ -30,4 +30,5 @@ public class DateHelperUtil {
 	public static String geFullDate(long timestamp) {
 		return df_full.format(new Date(timestamp));
 	}
+
 }
