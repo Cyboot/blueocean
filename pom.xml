@@ -15,6 +15,7 @@
 	</modules>
 
 	<properties>
+		<skipTests>true</skipTests>
 		<slf4jVersion>1.6.1</slf4jVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
