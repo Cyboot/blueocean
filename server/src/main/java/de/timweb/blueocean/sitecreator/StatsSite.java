@@ -12,7 +12,7 @@ public class StatsSite implements Site {
 
 	@Override
 	public String getHTML(Request request) throws IOException {
-		return FileUtils.readFileToString(new File("web/stats.html")) + "äüö";
+		return FileUtils.readFileToString(new File("web/stats.html")) + "Ã¶Ã¤Ã¼";
 	}
 
 }
